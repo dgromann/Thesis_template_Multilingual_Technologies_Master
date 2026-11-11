@@ -1,0 +1,77 @@
+% -- Commands for the title page --------------
+
+% -- Title of the work
+\newcommand{\TitleValue}{Title}
+\newcommand{\SubtitleValue}{Subtitle}
+
+% -- Name
+\newcommand{\NameValue}{\textgreater degree(s) first name family name degree(s)\textless \par }
+
+
+% -- Desired degree
+\newcommand{\DegreeValue}{Master of Science (MSc \hspace{0.1cm}(MSC)}
+
+% -- Year
+\newcommand{\YearValue}{\textgreater Year\textless }
+
+% -- Degree programme name
+\newcommand{\ProgrammeNameValue}{Multilingual Technologies}
+
+% -- Supervisors
+\newcommand{\SupervisorValue}{\textgreater degree first name family name \textless}
+\newcommand{\CoSupervisorValue}{}
+
+% -- Commands to update the values
+\newcommand{\Title}[1]{\renewcommand{\TitleValue}{#1}}
+\newcommand{\Subtitle}[1]{\renewcommand{\SubtitleValue}{#1}}
+\newcommand{\Name}[1]{\renewcommand{\NameValue}{#1}}
+\newcommand{\Degree}[1]{\renewcommand{\DegreeValue}{#1} }
+\newcommand{\Year}[1]{\renewcommand{\YearValue}{#1}}
+\newcommand{\ProgrammeName}[1]{\renewcommand{\ProgrammeNameValue}{#1}}
+\newcommand{\Supervisor}[1]{\renewcommand{\SupervisorValue}{#1}}
+\newcommand{\CoSupervisor}[1]{\renewcommand{\CoSupervisorValue}{#1}}
+\newcommand{\CoSupValue}{1}
+
+% -- Format and setup for titlepage
+\newcommand{\Titlepage}{
+    \begin{titlepage}
+    \fontfamily{phv}\selectfont % Arial look-alike
+    \begin{tikzpicture}[remember picture,overlay]
+    % logo
+    \node[anchor=north west,inner sep=0pt] at (current page.north west)
+    {\includegraphics[width=21.19cm,height=29.98cm]{figures/HCW_Titlepage_Background.jpg}};
+     
+    % thesis type, title, subtitle
+    \node[anchor=north west,inner sep=0pt,text width=13cm,align=left]
+        at ($(current page.north west)+(4.25cm,-5.98cm)$) {
+        \fontsize{20}{26.6}\selectfont Master's Thesis\par
+        \vspace{32pt}
+        \fontsize{14}{16.1}\selectfont\bfseries \TitleValue\par
+        \vspace{8pt}
+        \fontsize{12}{13.8}\selectfont\mdseries \SubtitleValue\par
+    };
+ 
+    % author, degree, programme, supervisors
+    \node[anchor=north west,inner sep=0pt,text width=13cm,align=left]
+        at ($(current page.north west)+(4.25cm,-20.07cm)$) {
+        \fontsize{12}{16}\selectfont
+        Submitted by \textbf{\NameValue}\par
+        \vspace{15pt}
+        To obtain the academic degree of\\
+        \textbf{\DegreeValue}\par
+        \vspace{81pt}
+        \fontsize{10}{13.3}\selectfont
+        Vienna, \YearValue\par
+        \vspace{8pt}
+        \begin{tabular}{@{}p{5.3cm}@{}p{7.7cm}@{}}
+        Study program: & \ProgrammeNameValue \\[8pt]
+        at: & Hochschule Campus Wien \\[8pt]
+        supervised by: & \SupervisorValue
+            \ifnum\CoSupValue=1 \newline \CoSupervisorValue\fi
+        \end{tabular}
+    };
+ 
+    \end{tikzpicture}
+    \end{titlepage}
+}
+

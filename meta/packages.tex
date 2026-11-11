@@ -1,0 +1,70 @@
+% Here you will find some useful as well as required packages that are automatically imported in this template with a brief description what they are used for 
+%---------------------------------
+% Minimally required packages 
+%---------------------------------
+% Required for correct character encoding
+\usepackage[utf8]{inputenc}
+
+\setkomafont{disposition}{\normalcolor\bfseries}
+\usepackage[british]{babel}
+% To customize page layout
+\usepackage{graphicx}
+\usepackage{scrhack}
+\usepackage{geometry}
+\usepackage{layout}
+\usepackage{changepage}
+\usepackage[final]{microtype}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+% To represent URLs within LaTex
+\usepackage{url}
+% Check this package
+%\usepackage[multiuser,marginclue,nomargin,inline,index]{fixme}
+% Needed to include images within LaTex
+\usepackage{graphicx}
+
+% Make sure that the numbering of figures and tables is continuous and not dependent on the chapter
+\counterwithout{figure}{chapter}
+\counterwithout{table}{chapter}
+\counterwithout{equation}{chapter}
+
+
+% Required to represent code within LaTex
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\lstdefinestyle{mystyle}{
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+% Required for bibliography style and inclusion of the bib file
+\usepackage{natbib}
+\usepackage[a-2u]{pdfx}
+%\usepackage{hyperref}
+%---------------------------------
+
+
+%---------------------------------
+% Additional packages that can be changed
+%%---------------------------------
+% Facilitates using colors within LaTex
+\usepackage{xcolor}
+% To create and work with glossaries
+\usepackage[acronym]{glossaries}
+%---------------------------------
+
+\usepackage{multirow}
